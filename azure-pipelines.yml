@@ -4,6 +4,9 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+  Major: '0'
+  Minor: '1'
+  Patch: '0'
 
 variables:
   buildConfiguration: 'Release'
@@ -26,24 +29,10 @@ steps:
     packagesToPack: '**/*.csproj'
     nobuild: true
     versioningScheme: 'byPrereleaseNumber'
-    majorVersion: '0'
-    minorVersion: '1'
-    patchVersion: '0'
+    majorVersion: $(Major)
+    minorVersion: $(Minor)
+    patchVersion: $(Patch)
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    nuGetFeedType: 'internal'
-    publishVstsFeed: '39978df6-ae7d-4474-893a-286131a77613'
-    vstsFeed: 'SeventhServices'
-
-- task: NuGetCommand@2
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'MyGet Push'
 
 
 
