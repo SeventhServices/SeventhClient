@@ -1,5 +1,5 @@
 # SeventhServices.Client
-[![Build Status](https://dev.azure.com/Seventh-services/SeventhServices.Client/_apis/build/status/SeventhServices.Client?branchName=master)](https://dev.azure.com/Seventh-services/SeventhServices.Client/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://dev.azure.com/SeventhServices/SeventhServices.Client/_apis/build/status/SeventhServices.Client?branchName=master)](https://dev.azure.com/Seventh-services/SeventhServices.Client/_build/latest?definitionId=1&branchName=master)
 [![Actions Status](https://github.com/SeventhServices/SeventhServices.Client/workflows/Build/badge.svg)](https://github.com/SeventhServices/SeventhServices.Client/actions)
 ![GitHub](https://img.shields.io/github/license/SeventhServices/SeventhServices.Client)
 
