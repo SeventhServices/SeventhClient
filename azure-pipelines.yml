@@ -4,12 +4,12 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-  Major: '0'
-  Minor: '1'
-  Patch: '0'
 
 variables:
   buildConfiguration: 'Release'
+  Major: '0'
+  Minor: '1'
+  Patch: '0'
 
 steps:
 - task : UseDotNet@2
@@ -33,7 +33,25 @@ steps:
     minorVersion: $(Minor)
     patchVersion: $(Patch)
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'dee0f159-5b38-44f4-b582-516f041bec05'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'MyGet Push'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop-azure-ci'
+    publishLocation: 'Container'
 
 
 
