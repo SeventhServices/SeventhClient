@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>SeventhServices.Client.Extensions.HttpClientFactory</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <Description>An HttpClientFactory Extension for Api Client for SeventhServices.Client.</Description>
+    <Product>SeventhServices.Client</Product>
+    <Company>SeventhServices</Company>
+    <Authors>SeventhServices</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WebApiClient.Extensions.HttpClientFactory" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SeventhServices.Client\SeventhServices.Client.csproj" />
+  </ItemGroup>
+
+</Project>

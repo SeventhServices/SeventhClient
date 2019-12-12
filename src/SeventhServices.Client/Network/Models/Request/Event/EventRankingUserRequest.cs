@@ -1,0 +1,26 @@
+﻿using SeventhServices.Client.Common.Enums;
+
+namespace SeventhServices.Client.Network.Models.Request.Event
+{
+    public class EventRankingUserRequest : ApiUserRequest
+    {
+        public const string Path = "event/ranking/user";
+        public override string ApiName { get; set; } = Path;
+
+        public OpenEventType EventType { get; set; }
+
+        public RankingCategory RankingType { get; set; } = RankingCategory.TotalPointRanking;
+
+        public long MusicId { get; set; }
+
+        public Difficulty Difficulty { get; set; }
+
+        public int MaxRank { get; set; } = 1;
+
+        public long PickupUserId { get; set; }
+
+        public int CharacterId { get; set; }
+
+        public int Friend { get; set; }
+    }
+}

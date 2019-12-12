@@ -1,0 +1,21 @@
+<Project ToolsVersion="15.0">
+  <Import Project="version.props" />
+
+  <PropertyGroup Label="Source Link">
+    <ProjectParentDirectory>$([System.IO.Path]::GetDirectoryName('$(MSBuildProjectDirectory)'))</ProjectParentDirectory>
+    <ProjectParentDirectoryName>$([System.IO.Path]::GetFileName('$(ProjectParentDirectory)'))</ProjectParentDirectoryName>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <Product>Rabbit Extensions</Product>
+    <RepositoryUrl>https://github.com/SeventhServices/SeventhServices.Client</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>An Api Client for Seventh Project.</Description>
+    <Authors>Sagilio</Authors>
+    <!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
+    
+    <PackageIconUrl></PackageIconUrl>
+    <PackageProjectUrl>https://github.com/SeventhServices/SeventhServices.Client</PackageProjectUrl>
+    <PackageLicenseUrl>https://www.gnu.org/licenses/lgpl-3.0.html</PackageLicenseUrl>
+  </PropertyGroup>
+</Project>
