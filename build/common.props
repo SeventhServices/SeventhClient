@@ -15,7 +15,7 @@
     <!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
     
     <PackageIconUrl></PackageIconUrl>
-    <PackageLicense>LGPL-3.0-or-later</PackageLicense>
+    <PackageLicense>LGPL-3.0</PackageLicense>
     <PackageProjectUrl>https://github.com/SeventhServices/SeventhServices.Client</PackageProjectUrl>
 
   </PropertyGroup>
