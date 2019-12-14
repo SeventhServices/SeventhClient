@@ -1,22 +1,17 @@
 ﻿using System;
-using System.ComponentModel;
 using SeventhServices.Client.Network.Interfaces;
 using WebApiClient;
 
-namespace SeventhServices.Client.Network.Services
+namespace SeventhServices.Client
 {
-    public static class HttpApiRegiste
+    public static class HttpApiExtension
     {
-
-        public static void Registe()
+        public static void RegisterSeventhClient()
         {
             HttpApi.Register<ISeventhApiClient>().ConfigureHttpApiConfig(config =>
             {
                 config.HttpClient.Timeout = TimeSpan.FromMinutes(2d);
-
                 config.FormatOptions.UseCamelCase = true;
-                config.FormatOptions.DateTimeFormat = DateTimeFormats.ISO8601_WithMillisecond;
-
             });
             HttpApi.Register<IAssetDownloadClient>().ConfigureHttpApiConfig(config =>
             {
@@ -27,6 +22,5 @@ namespace SeventhServices.Client.Network.Services
                 config.HttpClient.Timeout = TimeSpan.FromMinutes(5d);
             });
         }
-
     }
 }

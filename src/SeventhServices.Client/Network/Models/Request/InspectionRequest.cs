@@ -4,6 +4,5 @@
     {
         public const string Path = "inspection";
         public override string ApiName { get; set; } = Path;
-
     }
 }

@@ -13,7 +13,6 @@ namespace SeventhServices.Client.Common
             return Convert.ToInt64(ts.TotalSeconds).ToString();
         }
 
-
         public static string EscapeRfc3986(string data)
         {
             var sb = new StringBuilder();
