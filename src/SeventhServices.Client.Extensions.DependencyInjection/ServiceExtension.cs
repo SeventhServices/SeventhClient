@@ -1,14 +1,13 @@
-﻿using System;
+﻿using SeventhServices.Client.Network.Interfaces;
+using System;
 using Microsoft.Extensions.DependencyInjection;
-using SeventhServices.Client.Network.Interfaces;
 using WebApiClient;
 using WebApiClient.Extensions.DependencyInjection;
 
-namespace SeventhServices.Client
+namespace SeventhServices.Client.Extensions.DependencyInjection
 {
     public static class ServiceExtension
     {
-
         public static IServiceCollection AddSeventhRequireHttpApi(this IServiceCollection services)
         {
             services.AddHttpApi<ISeventhApiClient>().ConfigureHttpApiConfig(config =>
@@ -27,6 +26,5 @@ namespace SeventhServices.Client
             });
             return services;
         }
-
     }
 }

@@ -1,14 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\build\common.props" />
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <Description>An HttpClientFactory Extension for Api Client for SeventhServices.Client.</Description>
+    <Description>An DependencyInjection Extension for Api Client for SeventhServices.Client.</Description>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="WebApiClient.Extensions.HttpClientFactory" Version="2.1.0" />
+    <PackageReference Include="WebApiClient.Extensions.DependencyInjection" Version="2.0.3" />
   </ItemGroup>
 
   <ItemGroup>

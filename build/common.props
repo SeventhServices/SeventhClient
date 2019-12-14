@@ -11,10 +11,11 @@
     <RepositoryUrl>https://github.com/SeventhServices/SeventhServices.Client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Description>An Api Client for Seventh Project.</Description>
+    <Product>SeventhServices</Product>
+    <Company>Sagilio</Company>
     <Authors>Sagilio</Authors>
     <!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
-    
-    <PackageIconUrl></PackageIconUrl>
+
     <PackageLicense>LGPL-3.0</PackageLicense>
     <PackageProjectUrl>https://github.com/SeventhServices/SeventhServices.Client</PackageProjectUrl>
 
