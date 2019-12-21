@@ -1,6 +1,6 @@
 ﻿namespace SeventhServices.Client.Common
 {
-    internal static class UriConst
+    public static class UriConst
     {
         public const string SeventhApiBaseUrl = @"https://api.t7s.jp/";
         public const string SeventhAssetDownloadBaseUrl = @"https://d2kvktrbzlzxwg.cloudfront.net/";
