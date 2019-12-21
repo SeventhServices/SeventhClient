@@ -8,9 +8,8 @@
 
   <PropertyGroup Label="Package">
     <Product>Rabbit Extensions</Product>
-    <RepositoryUrl>https://github.com/SeventhServices/SeventhServices.Client</RepositoryUrl>
+    <RepositoryUrl>https://github.com/SeventhServices/SeventhClient</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Description>An Api Client for Seventh Project.</Description>
     <Product>SeventhServices</Product>
     <Company>Sagilio</Company>
     <Authors>Sagilio</Authors>

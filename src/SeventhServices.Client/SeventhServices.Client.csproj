@@ -4,10 +4,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <Product>SeventhServices.Client</Product>
-    <Company>SeventhServices</Company>
-    <Authors>SeventhServices</Authors>
-    <PackageId>SeventhServices.Client</PackageId>
+    <Description>An Api Client for Seventh Project.</Description>
   </PropertyGroup>
 
   <ItemGroup>
