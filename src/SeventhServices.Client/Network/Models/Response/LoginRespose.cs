@@ -22,7 +22,7 @@ namespace SeventhServices.Client.Network.Models.Response
         public long CharismaRecoverySecond { get; set; }
         public UserEventUnit[] UserEventUnitList { get; set; }
         public UserMedleyUnit[] UserMedleyUnitList { get; set; }
-        public Downloadconfig DownloadConfig { get; set; }
+        public DownloadConfig DownloadConfig { get; set; }
         public UserOrnament[] UserOrnamentList { get; set; }
         public IngCharacter[] IngCharacterList { get; set; }
         public Terminfo TermInfo { get; set; }

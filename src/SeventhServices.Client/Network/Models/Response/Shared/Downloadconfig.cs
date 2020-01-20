@@ -1,6 +1,6 @@
 ﻿namespace SeventhServices.Client.Network.Models.Response.Shared
 {
-    public class Downloadconfig
+    public class DownloadConfig
     {
         public string Domain { get; set; }
         public string SubDomain { get; set; }

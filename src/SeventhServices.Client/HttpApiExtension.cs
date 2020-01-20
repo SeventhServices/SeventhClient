@@ -20,6 +20,7 @@ namespace SeventhServices.Client
             HttpApi.Register<ICheckUpdateApiClient>().ConfigureHttpApiConfig(config =>
             {
                 config.HttpClient.Timeout = TimeSpan.FromMinutes(5d);
+                config.FormatOptions.UseCamelCase = true;
             });
         }
     }

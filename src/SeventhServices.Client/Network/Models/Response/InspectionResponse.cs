@@ -10,7 +10,7 @@ namespace SeventhServices.Client.Network.Models.Response
 
     public class Inspection
     {
-        public Downloadconfig DownloadConfig { get; set; }
+        public DownloadConfig DownloadConfig { get; set; }
         public bool Review { get; set; }
         public string Url { get; set; }
     }
