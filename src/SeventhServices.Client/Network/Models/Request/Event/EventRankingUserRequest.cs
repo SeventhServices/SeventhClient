@@ -4,12 +4,19 @@ namespace SeventhServices.Client.Network.Models.Request.Event
 {
     public class EventRankingUserRequest : ApiUserRequest
     {
+        public EventRankingUserRequest(OpenEventType eventType, 
+            RankingCategory rankingType = RankingCategory.TotalPointRanking)
+        {
+            EventType = eventType;
+            RankingType = rankingType;
+        }
+
         public const string Path = "event/ranking/user";
         public override string ApiName { get; set; } = Path;
 
         public OpenEventType EventType { get; set; }
 
-        public RankingCategory RankingType { get; set; } = RankingCategory.TotalPointRanking;
+        public RankingCategory RankingType { get; set; }
 
         public long MusicId { get; set; }
 

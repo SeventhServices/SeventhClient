@@ -18,8 +18,8 @@ namespace SeventhServices.Client.Extensions.HttpClientFactory
             });
             services.AddHttpApiTypedClient<ICheckUpdateApiClient>(config =>
             {
-                config.FormatOptions.UseCamelCase = true;
                 config.HttpClient.Timeout = TimeSpan.FromMinutes(5d);
+                config.FormatOptions.UseCamelCase = true;
             });
             services.AddHttpApiTypedClient<IAssetDownloadClient>(config =>
             {

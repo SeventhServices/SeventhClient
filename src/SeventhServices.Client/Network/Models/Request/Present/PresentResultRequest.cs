@@ -4,6 +4,18 @@ namespace SeventhServices.Client.Network.Models.Request.Present
 {
     public class PresentResultRequest : ApiUserRequest
     {
+        public PresentResultRequest(IEnumerable<long> userPresentIdList, 
+            long latestUserPresentId, long latestInterimUserPresentId, 
+            int cardDestinationId, int sceneType, int sellFlg)
+        {
+            UserPresentIdList = userPresentIdList;
+            LatestUserPresentId = latestUserPresentId;
+            LatestInterimUserPresentId = latestInterimUserPresentId;
+            CardDestinationId = cardDestinationId;
+            SceneType = sceneType;
+            SellFlg = sellFlg;
+        }
+
         public const string Path = "present/result";
         public override string ApiName { get; set; } = Path;
 

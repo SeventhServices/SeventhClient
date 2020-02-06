@@ -2,6 +2,11 @@
 {
     public class PresentMainRequest :ApiUserRequest
     {
+        public PresentMainRequest(int destinationDormitoryId)
+        {
+            DestinationDormitoryId = destinationDormitoryId;
+        }
+
         public const string Path = "present/main";
         public override string ApiName { get; set; } = Path;
 

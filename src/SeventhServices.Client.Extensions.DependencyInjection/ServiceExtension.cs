@@ -19,6 +19,7 @@ namespace SeventhServices.Client.Extensions.DependencyInjection
             services.AddHttpApi<ICheckUpdateApiClient>().ConfigureHttpApiConfig(config =>
             {
                 config.HttpClient.Timeout = TimeSpan.FromMinutes(5d);
+                config.FormatOptions.UseCamelCase = true;
             });
             services.AddHttpApi<IAssetDownloadClient>().ConfigureHttpApiConfig(config =>
             {
