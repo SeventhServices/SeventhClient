@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Package">
-    <Product>Rabbit Extensions</Product>
     <RepositoryUrl>https://github.com/SeventhServices/SeventhClient</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Product>SeventhServices</Product>
@@ -15,8 +14,8 @@
     <Authors>Sagilio</Authors>
     <!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
 
-    <PackageLicense>LGPL-3.0</PackageLicense>
-    <PackageProjectUrl>https://github.com/SeventhServices/SeventhServices.Client</PackageProjectUrl>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/SeventhServices/Seventh.Client</PackageProjectUrl>
 
   </PropertyGroup>
 </Project>
