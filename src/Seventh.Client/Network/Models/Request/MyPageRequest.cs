@@ -10,7 +10,6 @@
         public const string Path = "mypage";
         public override string ApiName { get; set; } = Path;
 
-        public int SubRev;
-
+        public int SubRev { get; set; }
     }
 }

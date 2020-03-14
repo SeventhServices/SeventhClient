@@ -11,4 +11,8 @@
     <PackageReference Include="WebApiClient.JIT" Version="1.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Network\Models\Response\Unit\" />
+  </ItemGroup>
+
 </Project>

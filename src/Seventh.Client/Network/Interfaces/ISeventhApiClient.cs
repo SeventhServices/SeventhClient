@@ -3,11 +3,15 @@ using Seventh.Client.Network.Attribute;
 using Seventh.Client.Network.Models.Request;
 using Seventh.Client.Network.Models.Request.Event;
 using Seventh.Client.Network.Models.Request.Friend;
+using Seventh.Client.Network.Models.Request.Player;
 using Seventh.Client.Network.Models.Request.Present;
 using Seventh.Client.Network.Models.Request.Setup;
 using Seventh.Client.Network.Models.Response;
 using Seventh.Client.Network.Models.Response.Event;
+using Seventh.Client.Network.Models.Request.Event.Raid;
+using Seventh.Client.Network.Models.Response.Event.Raid;
 using Seventh.Client.Network.Models.Response.Friend;
+using Seventh.Client.Network.Models.Response.Player;
 using Seventh.Client.Network.Models.Response.Present;
 using Seventh.Client.Network.Models.Response.Setup;
 using WebApiClient;
@@ -15,19 +19,56 @@ using WebApiClient.Attributes;
 
 namespace Seventh.Client.Network.Interfaces
 {
-    [TraceFilter(OutputTarget = OutputTarget.Console)]
+    [TraceFilter(OutputTarget = OutputTarget.LoggerFactory)]
     [HttpHost(UriConst.SeventhApiBaseUrl)]
-    [SeventhHeader]
+    [SeventhHeader("api.t7s.jp")]
     public interface ISeventhApiClient : IHttpApi
     {
+        #region Commmon
         [HttpPost(InspectionRequest.Path)]
         ITask<InspectionResponse> Inspection([SignatureFormContent] InspectionRequest inspectionRequest);
 
         [HttpPost(LoginRequest.Path)]
         ITask<LoginResponse> Login([SignatureFormContent] LoginRequest loginRequest);
 
+        [HttpPost(MyPageRequest.Path)]
+        ITask<MyPageResponse> MyPage([SignatureFormContent]  MyPageRequest myPageRequest);
+
+        #endregion
+
+        #region Player
+        //[HttpPost(PlayerMainRequest.Path)]
+        //ITask<PlayerMainResponse> PlayerMain([SignatureFormContent]  PlayerMainRequest friendSearchRequest);
+        #endregion
+
+        #region Friend
+        [HttpPost(FriendSearchRequest.Path)]
+        ITask<FriendSearchResponse> FriendSearch([SignatureFormContent]  FriendSearchRequest friendSearchRequest);
+
+        #endregion
+
+        #region Present
+        [HttpPost(PresentMainRequest.Path)]
+        ITask<PresentMainResponse> PresentMain([SignatureFormContent]  PresentMainRequest presentMainRequest);
+
+        [HttpPost(PresentResultRequest.Path)]
+        ITask<PresentMainResponse> PresentResult([SignatureFormWithListContent]  PresentResultRequest presentMainRequest);
+
+        #endregion
+
+        #region Setup
         [HttpPost(ResourceResultRequest.Path)]
         ITask<ResourceResultResponse> ResourceResult([SignatureFormContent] ResourceResultRequest resourceResultRequest);
+
+        #endregion
+
+        #region Ing
+
+
+
+        #endregion
+
+        #region Event
 
         [HttpPost(EventStatusRequest.Path)]
         ITask<EventStatusResponse> EventStatus([SignatureFormContent] EventStatusRequest statusRequest);
@@ -35,16 +76,36 @@ namespace Seventh.Client.Network.Interfaces
         [HttpPost(EventRankingUserRequest.Path)]
         ITask<EventRankingUserResponse> EventRankingUser([SignatureFormContent] EventRankingUserRequest rankingUserRequest);
 
-        [HttpPost(FriendSearchRequest.Path)]
-        ITask<FriendSearchResponse> FriendSearch([SignatureFormContent]  FriendSearchRequest friendSearchRequest);
+        #region Raid
+        //[HttpPost(EventRaidMainRequest.Path)]
+        //ITask<EventRaidMainResponse> EventRaidMain([SignatureFormContent] EventRaidMainRequest raidBoardRequest);
 
-        [HttpPost(PresentMainRequest.Path)]
-        ITask<PresentMainResponse> PresentMain([SignatureFormContent]  PresentMainRequest presentMainRequest);
+        [HttpPost(EventRaidTopRequest.Path)]
+        ITask<EventRaidTopResponse> EventRaidTop([SignatureFormContent] EventRaidTopRequest raidTopRequest);
 
-        [HttpPost(PresentResultRequest.Path)]
-        ITask<PresentMainResponse> PresentResult([SignatureFormWithListContent]  PresentResultRequest presentMainRequest);
+        [HttpPost(EventRaidBoardRequest.Path)]
+        ITask<EventRaidBoardResponse> EventRaidBoard([SignatureFormContent] EventRaidBoardRequest raidBoardRequest);
 
-        [HttpPost(MyPageRequest.Path)]
-        ITask<MyPageResponse> MyPage([SignatureFormContent]  MyPageRequest myPageRequest);
+        [HttpPost(EventRaidBoardNextStepRequest.Path)]
+        ITask<EventRaidBoardNextStepResponse> EventRaidBoardNextStep([SignatureFormContent] EventRaidBoardNextStepRequest raidBoardNextStepRequest);
+
+        [HttpPost(EventRaidMapRequest.Path)]
+        ITask<EventRaidMapResponse> EventRaidMap([SignatureFormContent] EventRaidMapRequest raidMapRequest);
+
+        [HttpPost(EventRaidListRequest.Path)]
+        ITask<EventRaidListResponse> EventRaidList([SignatureFormContent] EventRaidListRequest raidListRequest);
+
+        [HttpPost(EventRaidBattlePreparationRequest.Path)]
+        ITask<EventRaidBattlePreparationResponse> EventRaidBattlePreparation([SignatureFormContent] EventRaidBattlePreparationRequest raidBattlePreparationRequest);
+
+        [HttpPost(EventRaidBattleResultRequest.Path)]
+        ITask<EventRaidBattleResultResponse> EventRaidBattleResult([SignatureFormContent] EventRaidBattleResultRequest raidBattleResultRequest);
+
+        [HttpPost(EventRaidBattleRequestRequest.Path)]
+        ITask<EventRaidBattleRequestResponse> EventRaidBattleRequest([SignatureFormContent] EventRaidBattleRequestRequest raidBattleRequestRequest);
+
+        #endregion
+
+        #endregion
     }
 }

@@ -18,7 +18,6 @@ namespace Seventh.Client.Network.Interfaces
         [HttpGet]
         ITask<byte[]> FileBytes([Uri, Required] string uri);
 
-
         [HttpGet("resource/images/card/l/{fileName}")]
         ITask<HttpResponseFile> LargeCard(string fileName);
     }

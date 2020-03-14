@@ -5,10 +5,21 @@ namespace Seventh.Client.Network.Models.Request.Event
     public class EventRankingUserRequest : ApiUserRequest
     {
         public EventRankingUserRequest(OpenEventType eventType, 
-            RankingCategory rankingType = RankingCategory.TotalPointRanking)
+            RankingCategory rankingType, long maxRank,
+            int musicId, Difficulty difficulty) 
+            : this(eventType,rankingType, maxRank)
+        {
+            MusicId = musicId;
+            Difficulty = difficulty;
+        }
+
+        public EventRankingUserRequest(OpenEventType eventType, 
+            RankingCategory rankingType = RankingCategory.TotalPointRanking,
+            long maxRank = 1)
         {
             EventType = eventType;
             RankingType = rankingType;
+            MaxRank = maxRank;
         }
 
         public const string Path = "event/ranking/user";
@@ -18,11 +29,11 @@ namespace Seventh.Client.Network.Models.Request.Event
 
         public RankingCategory RankingType { get; set; }
 
-        public long MusicId { get; set; }
+        public int MusicId { get; set; }
 
         public Difficulty Difficulty { get; set; }
 
-        public int MaxRank { get; set; } = 1;
+        public long MaxRank { get; set; }
 
         public long PickupUserId { get; set; }
 

@@ -22,7 +22,7 @@ namespace Seventh.Client.Network.Interfaces
         ITask<HttpResponseFile> DownloadUpdateAsync([Uri, Required] string uri);
 
         [HttpHost(UriConst.SeventhApiBaseUrl)]
-        [SeventhHeader]
+        [SeventhHeader("api.t7s.jp")]
         [HttpPost(InspectionRequest.Path)]
         [TraceFilter(OutputTarget = OutputTarget.Console)]
         ITask<InspectionResponse> Inspection([SignatureFormContent] InspectionRequest inspectionRequest);

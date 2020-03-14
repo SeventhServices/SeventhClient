@@ -2,11 +2,11 @@
 {
     public class UserStatus
     {
-        public int UserId { get; set; }
+        public long UserId { get; set; }
         public string UserCode { get; set; }
         public string UserName { get; set; }
         public int Level { get; set; }
-        public int Exp { get; set; }
+        public long Exp { get; set; }
         public int UserTypeId { get; set; }
         public int Charisma { get; set; }
         public int MaxCharisma { get; set; }
@@ -27,6 +27,5 @@
         public bool GreetingFlg { get; set; }
         public bool GachaChanceVariationFlg { get; set; }
         public int FavoritePlayId { get; set; }
-
     }
 }
