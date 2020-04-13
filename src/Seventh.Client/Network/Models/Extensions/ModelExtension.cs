@@ -1,13 +1,14 @@
-﻿using Seventh.Client.Network.Models.Abstractions;
+﻿using Seventh.Client.Network.Models.Request;
 
 namespace Seventh.Client.Network.Models.Extensions
 {
     public static class ModelExtension
     {
-        public static void UseAccount(this IUseAccount request, string pid, string uuid)
+        public static T UseAccount<T>(this T request, string pid, string uuid) where T : ApiUserRequest
         {
             request.Pid = pid;
             request.Uuid = uuid;
+            return request;
         }
     }
 }
