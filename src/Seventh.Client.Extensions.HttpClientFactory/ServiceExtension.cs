@@ -27,5 +27,28 @@ namespace Seventh.Client.Extensions.HttpClientFactory
             });
             return services;
         }
+
+        public static IServiceCollection AddSeventhRequireHttpFactoryApi(this IServiceCollection services, Action<HttpApiConfig> configAction)
+        {
+            services.AddHttpApiTypedClient<ISeventhApiClient>(config =>
+            {
+                config.HttpClient.Timeout = TimeSpan.FromMinutes(2d);
+                config.FormatOptions.UseCamelCase = true;
+                config.FormatOptions.DateTimeFormat = DateTimeFormats.ISO8601_WithMillisecond;
+                configAction(config);
+            });
+            services.AddHttpApiTypedClient<ICheckUpdateApiClient>(config =>
+            {
+                config.HttpClient.Timeout = TimeSpan.FromMinutes(5d);
+                config.FormatOptions.UseCamelCase = true;
+                configAction(config);
+            });
+            services.AddHttpApiTypedClient<IAssetDownloadClient>(config =>
+            {
+                config.HttpClient.Timeout = TimeSpan.FromMinutes(5d);
+                configAction(config);
+            });
+            return services;
+        }
     }
 }

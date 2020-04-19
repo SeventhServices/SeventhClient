@@ -27,5 +27,28 @@ namespace Seventh.Client.Extensions.DependencyInjection
             });
             return services;
         }
+
+        public static IServiceCollection AddSeventhRequireHttpApi(this IServiceCollection services, Action<HttpApiConfig> configAction)
+        {
+            services.AddHttpApi<ISeventhApiClient>().ConfigureHttpApiConfig(c =>
+            {
+                c.HttpClient.Timeout = TimeSpan.FromMinutes(2d);
+                c.FormatOptions.UseCamelCase = true;
+                c.FormatOptions.DateTimeFormat = DateTimeFormats.ISO8601_WithMillisecond;
+                configAction(c);
+            });
+            services.AddHttpApi<ICheckUpdateApiClient>().ConfigureHttpApiConfig(c =>
+            {
+                c.HttpClient.Timeout = TimeSpan.FromMinutes(5d);
+                c.FormatOptions.UseCamelCase = true;
+                configAction(c);
+            });
+            services.AddHttpApi<IAssetDownloadClient>().ConfigureHttpApiConfig(c =>
+            {
+                c.HttpClient.Timeout = TimeSpan.FromMinutes(5d);
+                configAction(c);
+            });
+            return services;
+        }
     }
 }
