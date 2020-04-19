@@ -45,6 +45,6 @@ You can find other useage at
 ## Packages
 | Package Name                   | Develop (MyGet) |
 |--------------------------------|-----------------|
-| `SeventhServices.Client`       | [![MyGet tenant](https://img.shields.io/seventhservices.myget/seventhservices/v/SeventhServices.Client?label=Version)](https://www.myget.org/feed/seventhservices/package/nuget/SeventhServices.Client)|
-| `SeventhServices.Client.Extensions.DependencyInjection` | [![MyGet tenant](https://img.shields.io/seventhservices.myget/seventhservices/v/SeventhServices.Client.Extensions.DependencyInjection?label=Version)](https://www.myget.org/feed/seventhservices/package/nuget/SeventhServices.Client.Extensions.DependencyInjection) |
-| `SeventhServices.Client.Extensions.HttpClientFactory` | [![MyGet tenant](https://img.shields.io/seventhservices.myget/seventhservices/v/SeventhServices.Client.Extensions.HttpClientFactory?label=Version)](https://www.myget.org/feed/seventhservices/package/nuget/SeventhServices.Client.Extensions.HttpClientFactory) |
+| `Seventh.Client`       | [![MyGet tenant](https://img.shields.io/seventhservices.myget/seventhservices/v/Seventh.Client?label=Version)](https://www.myget.org/feed/seventhservices/package/nuget/Seventh.Client)|
+| `Seventh.Client.Extensions.DependencyInjection` | [![MyGet tenant](https://img.shields.io/seventhservices.myget/seventhservices/v/Seventh.Client.Extensions.DependencyInjection?label=Version)](https://www.myget.org/feed/seventhservices/package/nuget/Seventh.Client.Extensions.DependencyInjection) |
+| `Seventh.Client.Extensions.HttpClientFactory` | [![MyGet tenant](https://img.shields.io/seventhservices.myget/seventhservices/v/Seventh.Client.Extensions.HttpClientFactory?label=Version)](https://www.myget.org/feed/seventhservices/package/nuget/Seventh.Client.Extensions.HttpClientFactory) |
