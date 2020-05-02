@@ -5,12 +5,12 @@ using Seventh.Client.Network.Models.Response.Shared;
 
 namespace Seventh.Client.Network.Models.Response.Event.Raid
 {
-    public class EventRaidBoardResponse : ApiResult
+    public class EventRaidBoardResponse : ApiUserResponse
     {
         public RaidBoard RaidBoard { get; set; }
     }
 
-    public class RaidBoard : ApiNormalErrorResult
+    public class RaidBoard : ApiNormalErrorResponse
     {
         public UserStatusForCharismaChange UserStatus { get; set; }
         public UserBoard UserBoard { get; set; }

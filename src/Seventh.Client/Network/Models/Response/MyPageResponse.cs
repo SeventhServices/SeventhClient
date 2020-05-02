@@ -3,7 +3,7 @@ using Seventh.Client.Network.Models.Response.Shared;
 
 namespace Seventh.Client.Network.Models.Response
 {
-    public class MyPageResponse : ApiResult
+    public class MyPageResponse : ApiUserResponse
     {
         public MyPage MyPage { get; set; }
         public ForcePopup[] ForcePopupList { get; set; }

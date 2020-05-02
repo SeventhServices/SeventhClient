@@ -3,7 +3,7 @@ using Seventh.Client.Network.Models.Response.Shared;
 
 namespace Seventh.Client.Network.Models.Response
 {
-    public class LoginResponse : ApiResult
+    public class LoginResponse : ApiUserResponse
     {
         public Login Login { get; set; }
         public Tutorial Tutorial { get; set; }

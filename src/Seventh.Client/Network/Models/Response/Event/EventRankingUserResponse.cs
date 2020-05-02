@@ -1,6 +1,6 @@
 ﻿namespace Seventh.Client.Network.Models.Response.Event
 {
-    public class EventRankingUserResponse : ApiResult
+    public class EventRankingUserResponse : ApiUserResponse
     {
         public EventRankingUser EventRankingUser { get; set; }
     }

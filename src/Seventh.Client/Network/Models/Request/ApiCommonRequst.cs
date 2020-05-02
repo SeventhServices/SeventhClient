@@ -12,6 +12,7 @@ namespace Seventh.Client.Network.Models.Request
         public string Blt { get; set; } = RequestParams.Version;
         public string Device { get; set; } = RequestParams.Device;
         public string Platform { get; set; } = RequestParams.Platform;
+        // ReSharper disable once IdentifierTypo
         public string Osversion { get; set; } = RequestParams.OsVersion;
         public int Jb { get; set; } = RequestParams.Jb;
     }

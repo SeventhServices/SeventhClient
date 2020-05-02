@@ -1,6 +1,6 @@
 ﻿namespace Seventh.Client.Network.Models.Response
 {
-    public abstract class ApiErrorResult
+    public abstract class ApiErrorResponse
     {
         public Error Error { get; set; }
     }

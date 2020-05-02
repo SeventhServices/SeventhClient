@@ -3,7 +3,7 @@ using Seventh.Client.Network.Models.Request;
 
 namespace Seventh.Client.Network.Models.Response.Event.Raid
 {
-    public class EventRaidTopResponse : ApiResult
+    public class EventRaidTopResponse : ApiUserResponse
     {
         public RaidMain RaidMain { get; set; }
     }

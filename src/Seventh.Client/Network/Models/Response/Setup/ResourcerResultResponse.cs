@@ -2,7 +2,7 @@
 
 namespace Seventh.Client.Network.Models.Response.Setup
 {
-    public class ResourceResultResponse : ApiResult
+    public class ResourceResultResponse : ApiUserResponse
     {
         public UpdateResource UpdateResource { get; set; }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Seventh.Client.Network.Models.Response.Event.Raid
 {
-    public class EventRaidMapResponse : ApiResult
+    public class EventRaidMapResponse : ApiUserResponse
     {
         public RaidMap RaidMap { get; set; }
     }

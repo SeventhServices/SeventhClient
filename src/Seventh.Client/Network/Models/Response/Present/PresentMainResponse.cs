@@ -1,6 +1,6 @@
 ﻿namespace Seventh.Client.Network.Models.Response.Present
 {
-    public class PresentMainResponse : ApiResult
+    public class PresentMainResponse : ApiUserResponse
     {
         public PresentBox PresentBox { get; set; }
     }

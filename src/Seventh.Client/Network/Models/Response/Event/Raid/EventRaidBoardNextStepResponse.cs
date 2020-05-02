@@ -2,12 +2,12 @@
 
 namespace Seventh.Client.Network.Models.Response.Event.Raid
 {
-    public class EventRaidBoardNextStepResponse : ApiResult
+    public class EventRaidBoardNextStepResponse : ApiUserResponse
     {
         public RaidBoardNextStep RaidBoardNextStep { get; set; }
     }
 
-    public class RaidBoardNextStep : ApiNormalErrorResult
+    public class RaidBoardNextStep : ApiNormalErrorResponse
     {
         public AppearBossInfo AppearBossInfo { get; set; }
         public bool IsIllegal { get; set; }

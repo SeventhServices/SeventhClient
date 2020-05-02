@@ -2,7 +2,7 @@
 
 namespace Seventh.Client.Network.Models.Response.Event
 {
-    public class EventStatusResponse : ApiResult
+    public class EventStatusResponse : ApiUserResponse
     {
         public EventStatus EventStatus { get; set; }
     }

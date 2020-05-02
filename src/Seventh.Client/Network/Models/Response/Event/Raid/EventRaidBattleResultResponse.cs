@@ -3,12 +3,12 @@ using Seventh.Client.Network.Models.Response.Shared;
 
 namespace Seventh.Client.Network.Models.Response.Event.Raid
 {
-    public class EventRaidBattleResultResponse : ApiResult
+    public class EventRaidBattleResultResponse : ApiUserResponse
     {
         public RaidBattleResult RaidBattleResult { get; set; }
     }
 
-    public class RaidBattleResult : ApiNormalErrorResult
+    public class RaidBattleResult : ApiNormalErrorResponse
     {
         public Battle Battle { get; set; }
     }

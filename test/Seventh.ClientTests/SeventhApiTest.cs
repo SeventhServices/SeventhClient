@@ -8,8 +8,6 @@ using Seventh.Client.Network.Interfaces;
 using Seventh.Client.Network.Models.Extensions;
 using Seventh.Client.Network.Models.Request;
 using Seventh.Client.Network.Models.Request.Event;
-using Seventh.Client.Network.Models.Request.Event.Raid;
-using Seventh.Client.Network.Models.Request.Setup;
 using Xunit;
 
 namespace Seventh.ClientTests
@@ -23,19 +21,18 @@ namespace Seventh.ClientTests
                 .BuildServiceProvider();
 
             _apiClient = services.GetService<ISeventhApiClient>();
-            RequestParams.Rev = 404;
+            RequestParams.Rev = 414;
             RequestParams.Version = "6.10.4";
         }
 
         private readonly ISeventhApiClient _apiClient;
 
         [Fact]
-        public async Task ShouldGetModify()
+        public async Task ShouldInspection()
         {
             //var result =
             //    await _apiClient.Login(new LoginRequest());
-
-            var result = await _apiClient.EventRankingUser(new EventRankingUserRequest(OpenEventType.Raid){ PickupUserId = 791080}.UseAccount("3122229","0885b85d-7f6e-44cf-8956-8a1af567a86c"));
+            var result = await _apiClient.Inspection(new InspectionRequest());
             Assert.True(result != null);
         }
     }

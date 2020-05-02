@@ -2,7 +2,7 @@
 
 namespace Seventh.Client.Network.Models.Response.Event.Raid
 {
-    public class EventRaidListResponse : ApiResult
+    public class EventRaidListResponse : ApiUserResponse
     {
         public Raidlist RaidList { get; set; }
     }

@@ -2,7 +2,7 @@
 
 namespace Seventh.Client.Network.Models.Response
 {
-    public class InspectionResponse : ApiResult
+    public class InspectionResponse : ApiResponse
     {
         public Inspection Inspection { get; set; }
 

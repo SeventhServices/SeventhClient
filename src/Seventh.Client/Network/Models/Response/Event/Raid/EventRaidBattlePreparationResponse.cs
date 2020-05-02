@@ -2,12 +2,12 @@
 
 namespace Seventh.Client.Network.Models.Response.Event.Raid
 {
-    public class EventRaidBattlePreparationResponse : ApiResult
+    public class EventRaidBattlePreparationResponse : ApiUserResponse
     {
         public RaidBattlePreparation RaidBattlePreparation { get; set; }
     }
 
-    public class RaidBattlePreparation : ApiNormalErrorResult
+    public class RaidBattlePreparation : ApiNormalErrorResponse
     {
         public int NowHp { get; set; }
         public long LimitTime { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace Seventh.Client.Network.Models.Response.Friend
 {
-    public class FriendSearchResponse : ApiResult
+    public class FriendSearchResponse : ApiUserResponse
     {
         public FriendSearch FriendSearch { get; set; }
     }
