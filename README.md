@@ -8,7 +8,7 @@ An api client for seventh project.
 ## Status
 It is now be developing, you can use the develop version.
 
-## Useage
+## Usage
 This client package is depended on 
 [WebApiClient](https://github.com/dotnetcore/WebApiClient) and provide a `ISeventhApiClient`.
 
@@ -39,7 +39,7 @@ var apiClient = HttpApi.Resolve<ISeventhApiClient>();
 var response = await apiClient.Inspection(new InspectionRequest());
 ```
 
-You can find other useage at 
+You can find other usage at 
 [WebApiClient Wiki](https://github.com/dotnetcore/WebApiClient/wiki).
 
 ## Packages
