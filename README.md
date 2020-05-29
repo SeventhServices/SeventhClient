@@ -1,6 +1,6 @@
-# SeventhServices.Client
-[![Build Status](https://dev.azure.com/SeventhServices/SeventhServices.Client/_apis/build/status/SeventhServices.Client-Github?branchName=master)](https://dev.azure.com/SeventhServices/SeventhServices.Client/_build/latest?definitionId=2&branchName=master)
-[![Actions Status](https://github.com/SeventhServices/SeventhServices.Client/workflows/Build/badge.svg)](https://github.com/SeventhServices/SeventhServices.Client/actions)
+# Seventh.Client
+[![Build Status](https://dev.azure.com/SeventhServices/Seventh.Client/_apis/build/status/Seventh.Client?branchName=master)](https://dev.azure.com/SeventhServices/Seventh.Client/_build/latest?definitionId=15&branchName=master)
+[![Actions Status](https://github.com/SeventhServices/SeventhServices.Client/workflows/Build/badge.svg)](https://github.com/SeventhServices/SeventhClient/actions)
 [![GitHub](https://img.shields.io/github/license/SeventhServices/SeventhServices.Client)](https://github.com/SeventhServices/SeventhServices.Client/blob/master/LICENSE)
 
 An api client for seventh project.
