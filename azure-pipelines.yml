@@ -6,9 +6,6 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  Major: '0'
-  Minor: '1'
-  Patch: '0'
 
 stages:
 - stage: BuildAndPack
@@ -25,11 +22,24 @@ stages:
             packageType: 'sdk'
             version: '3.1.100'
 
+      - task: gitversion/setup@0
+        displayName: Install git version
+        inputs:
+          versionSpec: '5.x'
+          includePrerelease: false
+
+      - task: gitversion/execute@0
+        displayName: Complete version
+        inputs:
+          targetPath: '.'
+
       - task: DotNetCoreCLI@2
         displayName: Build projects
         inputs:
             command: 'build'
             arguments: '-c $(buildConfiguration)'
+            versioningScheme: byEnvVar
+            versionEnvVar: 'GitVersion.SemVer'
 
       - task: DotNetCoreCLI@2
         displayName: Test projects
@@ -39,30 +49,12 @@ stages:
       - task: DotNetCoreCLI@2
         displayName: Pack packages
         inputs:
-            command: 'pack'
-            configuration: $(buildConfiguration)
-            packagesToPack: '**/*.csproj'
-            nobuild: true
-            versioningScheme: 'byPrereleaseNumber'
-            majorVersion: $(Major)
-            minorVersion: $(Minor)
-            patchVersion: $(Patch)
-
-      - task: DotNetCoreCLI@2
-        displayName: Push packages to artifact
-        inputs:
-            command: 'push'
-            packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-            nuGetFeedType: 'internal'
-            publishVstsFeed: 'dee0f159-5b38-44f4-b582-516f041bec05'
-
-      - task: NuGetCommand@2
-        displayName: Push packages to myget
-        inputs:
-            command: 'push'
-            packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-            nuGetFeedType: 'external'
-            publishFeedCredentials: 'MyGet Push'
+          command: 'pack'
+          packagesToPack: '**/*.csproj'
+          configuration: '$(buildConfiguration)'
+          nobuild: true
+          versioningScheme: 'byEnvVar'
+          versionEnvVar: 'GitVersion.NuGetVersionV2'
 
       - task: PublishBuildArtifacts@1
         displayName: Push packages to drop
