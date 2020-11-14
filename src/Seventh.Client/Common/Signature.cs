@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Seventh.Client.Options;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using WebApiClientCore;
 
 namespace Seventh.Client.Common
 {
@@ -13,13 +15,24 @@ namespace Seventh.Client.Common
             _data = $"{apiName}?{GetParamsData(@params)}";
         }
 
+        public Signature(IEnumerable<KeyValue> @params, string apiName)
+        {
+            _data = $"{apiName}?{GetParamsData(@params)}";
+        }
+
         public Signature(IEnumerable<KeyValuePair<string, string>> @params, string apiName,
             string uuid) : this(@params, apiName)
         {
             _key = $"{_key}&{uuid}";
         }
 
-        private readonly string _key = SecretKey.SigKey;
+        public Signature(IEnumerable<KeyValue> @params, string apiName,
+            string uuid) : this(@params, apiName)
+        {
+            _key = $"{_key}&{uuid}";
+        }
+
+        private readonly string _key = SecretOptions.SigKey;
 
         private readonly string _data;
 
@@ -30,6 +43,12 @@ namespace Seventh.Client.Common
         }
 
         private string GetParamsData(IEnumerable<KeyValuePair<string, string>> @params)
+        {
+            return string.Join("&", (from p in @params.OrderBy(p => p.Key, StringComparer.Ordinal)
+                select $"{p.Key}={p.Value}").ToArray());
+        }
+
+        private string GetParamsData(IEnumerable<KeyValue> @params)
         {
             return string.Join("&", (from p in @params.OrderBy(p => p.Key, StringComparer.Ordinal)
                 select $"{p.Key}={p.Value}").ToArray());

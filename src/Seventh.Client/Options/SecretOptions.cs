@@ -1,6 +1,6 @@
-﻿namespace Seventh.Client.Common
+﻿namespace Seventh.Client.Options
 {
-    internal static class SecretKey
+    internal static class SecretOptions
     {
         public static readonly string SigKey =
             string.Join("-", "0249E2D0",

@@ -1,25 +1,24 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Seventh.Client.Common;
-using WebApiClient.Attributes;
+using WebApiClientCore;
+using WebApiClientCore.Attributes;
 
 namespace Seventh.Client.Network.Attribute
 {
     internal sealed class SignatureFormContentAttribute : FormContentAttribute
     {
-        protected override IEnumerable<KeyValuePair<string, string>> HandleForm(
-            IEnumerable<KeyValuePair<string, string>> form)
+        protected override IEnumerable<KeyValue> SerializeToKeyValues(ApiParameterContext context)
         {
-            var formList = form.ToList();
+            var keyValues = base.SerializeToKeyValues(context);
+            var formList = keyValues.ToList();
             var apiName = formList.Find(p => p.Key == "apiName");
             var uuid = formList.Find(p => p.Key == "uuid");
             formList.Remove(apiName);
             formList.Remove(uuid);
-            formList.Add(new KeyValuePair<string, string>("sig",
+            formList.Add(new KeyValue("sig",
                 new Signature(formList, apiName.Value, uuid.Value).ToString()));
-            return base.HandleForm(formList);
+            return formList;
         }
-
-
     }
 }

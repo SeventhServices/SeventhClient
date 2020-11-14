@@ -21,8 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Seventh.Client.Extensions.DependencyInjection\Seventh.Client.Extensions.DependencyInjection.csproj" />
-    <ProjectReference Include="..\..\src\Seventh.Client.Extensions.HttpClientFactory\Seventh.Client.Extensions.HttpClientFactory.csproj" />
     <ProjectReference Include="..\..\src\Seventh.Client\Seventh.Client.csproj" />
   </ItemGroup>
 

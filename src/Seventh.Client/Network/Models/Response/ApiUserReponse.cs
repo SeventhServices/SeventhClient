@@ -2,8 +2,7 @@
 {
     public abstract class ApiUserResponse : ApiResponse
     {
-        public string Pid { get; set; }
-
+        public int Pid { get; set; }
         public int Rev { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Seventh.Client.Common
 {
-    internal static class Extension
+    internal static class IEnumerableExtension
     {
         public static void ForEach<T>(this IEnumerable<T> self, Action<T> action)
         {

@@ -10,6 +10,5 @@
         public const string ApkFrom1AppCheckUrl = @"https://1app.pw/app/history/8";
         public const string ApkFrom1AppBaseUrl = @"https://1app.pw";
         public const string ApkFromQooApp = @"https://apps.qoo-app.com/app/1938";
-
     }
 }

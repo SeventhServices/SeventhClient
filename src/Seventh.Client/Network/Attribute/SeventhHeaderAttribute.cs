@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Seventh.Client.Common.Params;
-using WebApiClient.Attributes;
-using WebApiClient.Contexts;
+using Seventh.Client.Options;
+using WebApiClientCore;
+using WebApiClientCore.Attributes;
 
 namespace Seventh.Client.Network.Attribute
 {
@@ -20,18 +20,18 @@ namespace Seventh.Client.Network.Attribute
         public SeventhHeaderAttribute(string host)
         {
             _host = host;
-            _userAgent = $"t7s/{RequestParams.Version} CFNetwork/1125.2 Darwin/19.4.0";
+            _userAgent = $"t7s/{DefaultOptions.ParamOptions.Blt} CFNetwork/1125.2 Darwin/19.4.0";
         }
 
-
-        public override Task BeforeRequestAsync(ApiActionContext context)
+        public override Task OnRequestAsync(ApiRequestContext context)
         {
-            context.RequestMessage.Headers.Add("Expect", "100-continue");
-            context.RequestMessage.Headers.Remove("User-Agent");
-            context.RequestMessage.Headers.Add("User-Agent", _userAgent);
-            context.RequestMessage.Headers.Add("Host", _host);
-            context.RequestMessage.Headers.Add("Connection", "Keep-Alive");
-            context.RequestMessage.Headers.Add("Accept-Encoding", "gzip,deflate,br");
+            var requestHeaders = context.HttpContext.RequestMessage.Headers;
+            requestHeaders.Add("Expect", "100-continue");
+            requestHeaders.Remove("User-Agent");
+            requestHeaders.Add("User-Agent", _userAgent);
+            requestHeaders.Add("Host", _host);
+            requestHeaders.Add("Connection", "Keep-Alive");
+            requestHeaders.Add("Accept-Encoding", "gzip,deflate,br");
             return Task.CompletedTask;
         }
     }

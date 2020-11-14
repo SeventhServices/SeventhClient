@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Net.Http;
 using Seventh.Client.Common;
-using WebApiClient;
-using WebApiClient.Attributes;
+using WebApiClientCore;
+using WebApiClientCore.Attributes;
 
 namespace Seventh.Client.Network.Interfaces
 {
@@ -10,7 +11,7 @@ namespace Seventh.Client.Network.Interfaces
     public interface IAssetDownloadClient : IHttpApi
     {
         [HttpGet]
-        ITask<HttpResponseFile> FileResponse([Uri, Required] string uri);
+        ITask<HttpRequestMessage> FileResponse([Uri, Required] string uri);
 
         [HttpGet]
         ITask<Stream> FileStream([Uri, Required] string uri);
@@ -19,6 +20,6 @@ namespace Seventh.Client.Network.Interfaces
         ITask<byte[]> FileBytes([Uri, Required] string uri);
 
         [HttpGet("resource/images/card/l/{fileName}")]
-        ITask<HttpResponseFile> LargeCard(string fileName);
+        ITask<HttpRequestMessage> LargeCard(string fileName);
     }
 }

@@ -11,15 +11,14 @@ using Seventh.Client.Network.Models.Response.Event;
 using Seventh.Client.Network.Models.Request.Event.Raid;
 using Seventh.Client.Network.Models.Response.Event.Raid;
 using Seventh.Client.Network.Models.Response.Friend;
-using Seventh.Client.Network.Models.Response.Player;
 using Seventh.Client.Network.Models.Response.Present;
 using Seventh.Client.Network.Models.Response.Setup;
-using WebApiClient;
-using WebApiClient.Attributes;
+using WebApiClientCore.Attributes;
+using WebApiClientCore;
 
 namespace Seventh.Client.Network.Interfaces
 {
-    [TraceFilter(OutputTarget = OutputTarget.LoggerFactory)]
+    [LoggingFilter]
     [HttpHost(UriConst.SeventhApiBaseUrl)]
     [SeventhHeader("api.t7s.jp")]
     public interface ISeventhApiClient : IHttpApi

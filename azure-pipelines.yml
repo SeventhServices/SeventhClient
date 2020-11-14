@@ -17,10 +17,10 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
       - task : UseDotNet@2
-        displayName: Use dotnet-sdk-3.1.100
+        displayName: Use dotnet-sdk-3.x
         inputs:
             packageType: 'sdk'
-            version: '3.1.100'
+            version: '3.x'
 
       - task: gitversion/setup@0
         displayName: Install git version
@@ -36,15 +36,15 @@ stages:
       - task: DotNetCoreCLI@2
         displayName: Build projects
         inputs:
-            command: 'build'
-            arguments: '-c $(buildConfiguration)'
-            versioningScheme: byEnvVar
-            versionEnvVar: 'GitVersion.SemVer'
+          command: 'build'
+          arguments: '-c $(buildConfiguration)'
+          versioningScheme: byEnvVar
+          versionEnvVar: 'GitVersion.SemVer'
 
       - task: DotNetCoreCLI@2
         displayName: Test projects
         inputs:
-            command: 'test'
+          command: 'test'
 
       - task: DotNetCoreCLI@2
         displayName: Pack packages
@@ -59,8 +59,6 @@ stages:
       - task: PublishBuildArtifacts@1
         displayName: Push packages to drop
         inputs:
-            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-            ArtifactName: 'drop-azure-ci'
-            publishLocation: 'Container'
-
-
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'drop-azure-ci'
+          publishLocation: 'Container'

@@ -11,13 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{13F5EF44-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15476F83-E6FF-45EE-8856-C4C1C8A62592}"
 	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		azure-pipelines-github.yml = azure-pipelines-github.yml
+		azure-pipelines.yml = azure-pipelines.yml
 		build\common.props = build\common.props
+		LICENSE = LICENSE
+		README.md = README.md
 		build\version.props = build\version.props
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seventh.Client.Extensions.HttpClientFactory", "src\Seventh.Client.Extensions.HttpClientFactory\Seventh.Client.Extensions.HttpClientFactory.csproj", "{82F0093D-9585-41D4-A50D-F7B4DBCA4879}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seventh.Client.Extensions.DependencyInjection", "src\Seventh.Client.Extensions.DependencyInjection\Seventh.Client.Extensions.DependencyInjection.csproj", "{2101949C-53D1-4503-B79A-0091E3573020}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seventh.ClientTests", "test\Seventh.ClientTests\Seventh.ClientTests.csproj", "{8915CBDA-C3B0-4B18-988F-875D1CCBDE98}"
 EndProject
@@ -31,14 +33,6 @@ Global
 		{9FB107B6-7370-4D95-879E-733D5A6546C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FB107B6-7370-4D95-879E-733D5A6546C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FB107B6-7370-4D95-879E-733D5A6546C6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82F0093D-9585-41D4-A50D-F7B4DBCA4879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82F0093D-9585-41D4-A50D-F7B4DBCA4879}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82F0093D-9585-41D4-A50D-F7B4DBCA4879}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82F0093D-9585-41D4-A50D-F7B4DBCA4879}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2101949C-53D1-4503-B79A-0091E3573020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2101949C-53D1-4503-B79A-0091E3573020}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2101949C-53D1-4503-B79A-0091E3573020}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2101949C-53D1-4503-B79A-0091E3573020}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8915CBDA-C3B0-4B18-988F-875D1CCBDE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8915CBDA-C3B0-4B18-988F-875D1CCBDE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8915CBDA-C3B0-4B18-988F-875D1CCBDE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,8 +43,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9FB107B6-7370-4D95-879E-733D5A6546C6} = {00E23EB6-8B1A-4807-B7E8-7865CC02049E}
-		{82F0093D-9585-41D4-A50D-F7B4DBCA4879} = {00E23EB6-8B1A-4807-B7E8-7865CC02049E}
-		{2101949C-53D1-4503-B79A-0091E3573020} = {00E23EB6-8B1A-4807-B7E8-7865CC02049E}
 		{8915CBDA-C3B0-4B18-988F-875D1CCBDE98} = {13F5EF44-8DA6-49D1-AF63-B28EB1EBEBB3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

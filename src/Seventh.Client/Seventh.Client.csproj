@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="WebApiClient.JIT" Version="1.1.3" />
+    <Folder Include="Network\Models\Response\Unit\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Network\Models\Response\Unit\" />
+    <PackageReference Include="WebApiClientCore" Version="1.1.2" />
   </ItemGroup>
 
 </Project>

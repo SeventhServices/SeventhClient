@@ -2,8 +2,8 @@
 {
     public class DownloadConfig
     {
-        public string Domain { get; set; }
-        public string SubDomain { get; set; }
-        public string OneByOneDownloadPath { get; set; }
+        public string BaseUrl { get; set; }
+        public string Resource { get; set; }
+        public string ImagePath { get; set; }
     }
 }
