@@ -36,6 +36,7 @@ namespace Seventh.ClientTests
         [Fact]
         public async Task ShouldResourceResult()
         {
+            DefaultOptions.ParamOptions.Version = "7.7.7";
             var result = await _apiClient.ResourceResult(new ResourceResultRequest(474, DownloadType.Difference));
             Assert.True(result != null);
         }
